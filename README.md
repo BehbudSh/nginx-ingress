@@ -32,23 +32,6 @@ I use openssl to create the key and certificate in one command
 
 openssl req -newkey rsa:2048 -nodes -keyout secret.key -x509 -days 365 -out secret.crt
 
-writing new private key to 'secret.key'
------
-You are about to be asked to enter information that will be incorporated
-into your certificate request.
-What you are about to enter is what is called a Distinguished Name or a DN.
-There are quite a few fields but you can leave some blank
-For some fields there will be a default value,
-If you enter '.', the field will be left blank.
------
-Country Name (2 letter code) [AU]: Azerbaijan
-State or Province Name (full name) [Some-State]:Baku
-Locality Name (eg, city) []: Baku
-Organization Name (eg, company) [Internet Widgits Pty Ltd]: My Company
-Organizational Unit Name (eg, section) []: System Engineering and DevOps 
-Common Name (e.g. server FQDN or YOUR name) []: server name or IP
-Email Address []:
-
 $ ll secret.*
  Now that I have the key and crt file, I’m ready to create a kubernetes Secret using these files. Kubernetes stores these files as a base64 string, so the first step is to encode them.
 
