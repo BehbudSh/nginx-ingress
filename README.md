@@ -15,7 +15,7 @@ Prerequisites
 
 You must have an ingress controller to satisfy an Ingress. Only creating an Ingress resource has no effect.
 You may need to deploy an Ingress controller such as ingress-nginx.
-The installation manifests are located in the deployments folder. In the steps below we assume that you will be running the commands from that folder.
+The installation manifests are located in the BehbudSh/nginx-ingress repository. In the steps below we assume that you will be running the commands from that folder.
 Let’s start to install our ingress-controller, assuming you have Kubernetes cluster.
 
 1. Create a service account for the Ingress controller:
@@ -76,7 +76,7 @@ Create a service with the type NodePort:
 
 kubectl create -f service/nodeport.yaml
 
-Kubernetes will randomly allocate two ports on every node of the cluster. To access the Ingress controller, use an IP address of any node of the cluster along with the two allocated ports. Read more about the type NodePort here.
+Kubernetes will randomly allocate two ports on every node of the cluster. To access the Ingress controller, use an IP address of any node of the cluster along with the two allocated ports.
 
 
 
